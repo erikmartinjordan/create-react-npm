@@ -3,10 +3,13 @@
 ![create-react-npm version](https://img.shields.io/npm/v/create-react-npm)
 ![create-react-npm license](https://img.shields.io/npm/l/create-react-npm)
 
+┌─┐┬─┐┌─┐┌─┐┌┬┐┌─┐  ┬─┐┌─┐┌─┐┌─┐┌┬┐  ┌┐┌┌─┐┌┬┐
+│  ├┬┘├┤ ├─┤ │ ├┤───├┬┘├┤ ├─┤│   │───│││├─┘│││
+└─┘┴└─└─┘┴ ┴ ┴ └─┘  ┴└─└─┘┴ ┴└─┘ ┴   ┘└┘┴  ┴ ┴
+
 Easy way to convert a React component into a package ready to publish in npm. It will take you less than 1 minute to publish the component and it will be available for thousands of developers. 
 
-Avoid losing time configuring Webpack, Babel and others.
-
+Avoid losing time configuring Webpack, Babel and others. 😫
 
 ## Installation
 
