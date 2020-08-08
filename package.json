@@ -1,7 +1,7 @@
 {
     "name": "create-react-npm",
     "bin": "./index.js",
-    "version": "1.0.2",
+    "version": "1.0.21",
     "description": "Builds a React component into a package ready to publish in npm.",
     "main": "index.js",
     "scripts": {
@@ -12,7 +12,7 @@
         "name": "Erik Martín Jordán",
         "website": "https://erikmartinjordan.com"
     },
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "chalk": "^4.1.0"
     }
