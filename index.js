@@ -53,7 +53,7 @@ const createConfigFiles = (componentName, componentDesc, authorName, authorWebsi
         "name": `${componentName}`,
         "version": "1.0.0",
         "description": `${componentDesc}`,
-        "main": "index.js",
+        "main": "./build/index.js",
         "scripts": {
             "test": "echo \"Error: no test specified\" && exit 1",
             "build": "webpack"
@@ -69,9 +69,7 @@ const createConfigFiles = (componentName, componentDesc, authorName, authorWebsi
     
     let webpackConfig = {
         
-        "entry": [
-            `./src/${componentName}.js`
-        ],
+        "entry": [`./src/${componentName}.js`],
         "module": {
             "rules": [
               {
@@ -115,24 +113,26 @@ const createConfigFiles = (componentName, componentDesc, authorName, authorWebsi
     
     let babelConfig = {
         
-        "presets": [
-            "@babel/preset-env",
-            "@babel/preset-react"
-        ]
+        "presets": ["@babel/preset-env", "@babel/preset-react"]
         
     };
     
+    let jsonPackageFile = JSON.stringify(packageConfig, null, 4);
+    let jsonWebpackFile = JSON.stringify(webpackConfig, null, 4);
+    let jsonBabelFile   = JSON.stringify(babelConfig,   null, 4);
+    
     fs.openSync(packageFile, 'w');
-    fs.writeFileSync(packageFile, JSON.stringify(packageConfig, null, 4));
+    fs.writeFileSync(packageFile, jsonPackageFile);
     console.log(chalk.green(`✅ ${packageFile} has been created.`));
     
     fs.openSync(webpackFile, 'w');
     fs.writeFileSync(webpackFile, 'module.exports = ');
-    fs.appendFileSync(webpackFile, JSON.stringify(webpackConfig, null, 4));
+    jsonWebpackFile = jsonWebpackFile.replace(`"/\.(js|jsx)$/"`, `/\.(js|jsx)$/`).replace(`"/(\.css$)/"`, `/(\.css$)/`);
+    fs.appendFileSync(webpackFile, jsonWebpackFile);
     console.log(chalk.green(`✅ ${webpackFile} has been created.`));
     
     fs.openSync(babelFile,   'w');
-    fs.writeFileSync(babelFile,   JSON.stringify(babelConfig,   null, 4));
+    fs.writeFileSync(babelFile,   jsonBabelFile);
     console.log(chalk.green(`✅ ${babelFile} has been created.`));
     
 }
@@ -175,13 +175,10 @@ const main = async () => {
     
     // Printing name of the app
     console.log(chalk.green(`
-
-        ██████╗ ███████╗ █████╗  ██████╗████████╗ ██████╗ ██████╗ 
-        ██╔══██╗██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗
-        ██████╔╝█████╗  ███████║██║        ██║   ██║   ██║██████╔╝
-        ██╔══██╗██╔══╝  ██╔══██║██║        ██║   ██║   ██║██╔══██╗
-        ██║  ██║███████╗██║  ██║╚██████╗   ██║   ╚██████╔╝██║  ██║
-        ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+    
+        ┌─┐┬─┐┌─┐┌─┐┌┬┐┌─┐  ┬─┐┌─┐┌─┐┌─┐┌┬┐  ┌┐┌┌─┐┌┬┐
+        │  ├┬┘├┤ ├─┤ │ ├┤───├┬┘├┤ ├─┤│   │───│││├─┘│││
+        └─┘┴└─└─┘┴ ┴ ┴ └─┘  ┴└─└─┘┴ ┴└─┘ ┴   ┘└┘┴  ┴ ┴
     
     `));
     
