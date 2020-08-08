@@ -1,7 +1,7 @@
 {
     "name": "create-react-npm",
     "bin": "./index.js",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "description": "Builds a React component into a package ready to publish in npm.",
     "main": "index.js",
     "scripts": {
