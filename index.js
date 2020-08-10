@@ -169,6 +169,24 @@ const buildPackage = () => {
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Check for src folder
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const checkSrcFolder = () => {
+    
+    try{
+        if(fs.readdirSync('./src').length > 0)
+            console.log(chalk.green(`✅ /src folder checked!`));
+        else
+            throw 'error';
+    }
+    catch(err){
+        console.log(chalk.red(`❌ Error checking /src: Create a /src folder and place your component on there.`));
+        process.exit(1);
+    }
+    
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Main thread
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const main = async () => {
@@ -181,6 +199,9 @@ const main = async () => {
         └─┘┴└─└─┘┴ ┴ ┴ └─┘  ┴└─└─┘┴ ┴└─┘ ┴   ┘└┘┴  ┴ ┴
     
     `));
+    
+    // Checking if there is src folder
+    checkSrcFolder();
     
     // Asking the user some questions
     let componentName = await askQuestion("What is the name of the main component? Example: awesomeComponent \n");
