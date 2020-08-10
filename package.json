@@ -1,8 +1,8 @@
 {
     "name": "create-react-npm",
     "bin": "./index.js",
-    "version": "1.0.23",
-    "description": "Builds a React component into a package ready to publish in npm.",
+    "version": "1.0.24",
+    "description": "🏗️ Build a React component into a package ready to publish in npm.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
