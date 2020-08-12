@@ -1,19 +1,20 @@
 {
     "name": "create-react-npm",
     "bin": "./index.js",
-    "version": "1.0.25",
+    "version": "1.0.3",
     "description": "🏗️ Build a React component into a package ready to publish in npm.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
+    "keywords": ["react", "npm", "build", "package"],
     "author": {
         "name": "Erik Martín Jordán",
         "website": "https://erikmartinjordan.com"
     },
     "license": "MIT",
     "dependencies": {
-        "chalk": "^4.1.0"
+        "chalk": "^4.1.0",
+        "cli-select": "^1.1.2"
     }
 }
