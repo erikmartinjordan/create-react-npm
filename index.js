@@ -70,7 +70,7 @@ const createConfigFiles = (mainComponent, componentName, componentDesc, authorNa
     
     let webpackConfig = {
         
-        "entry": [`./src/${mainComponent}.js`],
+        "entry": [`./src/${mainComponent}`],
         "module": {
             "rules": [
               {
