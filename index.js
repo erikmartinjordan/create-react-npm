@@ -230,6 +230,9 @@ const main = async () => {
     // Building the package
     buildPackage();
     
+    // Ready to publish
+    console.log(chalk.blue('To publish your component: \n npm publish'));
+    
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
